@@ -4,6 +4,10 @@ Projeto seguindo curso de React Avançado
 ## Sumário
 
 - [Anotações](#anotações)
+- [Development](#development)
+  - [Setup inicial](#setup-inicial)
+  - [Iniciar projeto](#iniciar-projeto)
+  - [Outros comandos](#outros-comandos)
 - [Strapi initial content](#strapi-initial-content)
 - [Referencias](#referencias)
 
@@ -13,73 +17,59 @@ Projeto seguindo curso de React Avançado
 
 ---
 
-## Strapi initial content
+## Development
 
-<details>
-<summary>Clique para ver</summary>
+### Setup inicial
+- ter o docker e o docker-compose instalado na máquina
+- Execute para instalar e criar um container com o Postgres
+  - _obs: deve estar no msm diretorio com o arquivo (deve estar no diretorio com o `docker-compose.yaml`)_ 
+  ```bash
+  docker-compose pull
+  docker-compose up -d
+  ```
 
-# 🚀 Getting started with Strapi
+### Iniciar projeto
+- docker (deve estar no diretorio com o `docker-compose.yaml`)
+  - Iniciar o postgres
+    ```bash
+    docker-compose up
+    ```
+  - parar o postgres
+    ```bash
+    docker-compose down
+    ```
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+- Strapi (deve ter o postgres já rodando)
+  - Iniciar Strapi com autoReload habilitado
+    ```bash
+    npm run develop
+    # or
+    yarn develop
+    ```
+  - Iniciar Strapi com autoReload desabilitado
+    ```bash
+    npm run start
+    # or
+    yarn start
+    ```
 
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
-
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
-
-</details>
+### Outros comandos
+- strapi
+  - Fazer o build da tela de admin
+    ```bash
+    npm run build
+    # or
+    yarn build
+    ```
 
 ---
 
 ## Referencias
 
-- [Cheat Sheet do strapi com as principais info](https://strapi-showcase.s3-us-west-2.amazonaws.com/CheatSheet.pdf)
+- Strapi
+  - [Cheat Sheet do strapi com as principais info](https://strapi-showcase.s3-us-west-2.amazonaws.com/CheatSheet.pdf)
+  - [documentation](https://docs.strapi.io) - Official Strapi documentation.
+  - [tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+  - [deploy](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html)
+  - [build](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+  - [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html)
