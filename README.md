@@ -4,6 +4,7 @@ Projeto seguindo curso de React Avançado
 ## Sumário
 
 - [Anotações](#anotações)
+  - [Content type builder](#content-type-builder)
 - [Development](#development)
   - [Setup inicial](#setup-inicial)
   - [Iniciar projeto](#iniciar-projeto)
@@ -14,6 +15,10 @@ Projeto seguindo curso de React Avançado
 ---
 
 ## Anotações
+
+### Content type builder
+
+Monta a arquitetura de dados de conteúdo
 
 ---
 
