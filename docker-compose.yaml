@@ -2,7 +2,7 @@ version: '3'
 services:
   postgres:
     container_name: react-avancado-postgres
-    image: postgres
+    image: postgres:14
     environment:
       POSTGRES_DB: strapi
       POSTGRES_USER: strapi
