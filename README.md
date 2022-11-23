@@ -5,6 +5,7 @@ Projeto seguindo curso de React Avançado
 
 - [Anotações](#anotações)
   - [Content type builder](#content-type-builder)
+  - [Postgres](#postgres)
 - [Development](#development)
   - [Setup inicial](#setup-inicial)
   - [Iniciar projeto](#iniciar-projeto)
@@ -20,6 +21,21 @@ Projeto seguindo curso de React Avançado
 
 Monta a arquitetura de dados de conteúdo
 
+<br>
+
+### Postgres
+
+```bash
+# realizar backup do BD a partir do container
+docker exec -i nome_container pg_dump -c --if-exists --exclude-table=nome_tabela_ignora_backup -h ipv4_postgres -U user_postgres -W > nome_arquivo.sql
+
+# realizar importação de um backup
+cat nome_arquivo.sql | docker exec -i nome_container psql -U nome_user_db
+
+```
+
+<br>
+
 ---
 
 ## Development
@@ -32,6 +48,13 @@ Monta a arquitetura de dados de conteúdo
   docker-compose pull
   docker-compose up -d
   ```
+- dados para importação
+  - caso queira importar dados iniciais, use o arquivo [`strapi.sql`](./assets/strapi.sql), digite o seguinte comando no terminal (o caminho no terminal deve estar dentro do assets)
+    ```bash
+    # backup no postgres dentro de um container
+    cat strapi.sql | docker exec -i nome_container psql -U nome_user_db
+    ```
+  - _obs: no momento desta anotação estou utilizando o wsl2 e rodando os comandos no terminal ubuntu com o docker ativo no windows._
 
 ### Iniciar projeto
 - docker (deve estar no diretorio com o `docker-compose.yaml`)
@@ -78,3 +101,5 @@ Monta a arquitetura de dados de conteúdo
   - [deploy](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html)
   - [build](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
   - [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html)
+- Postgres
+  - [documentação pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html)
